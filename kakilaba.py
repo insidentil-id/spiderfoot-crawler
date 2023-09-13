@@ -43,10 +43,7 @@ class Kakilaba:
 
         search_id = ""
         for x in response.json():
-            # id
-            # name
-            # target
-            # print(x['name'])
+
             if(x['name'] == query):
                 search_id = x['id']
 
@@ -61,7 +58,6 @@ class Kakilaba:
         response = requests.request("GET", url, headers=this.headers, params=querystring)
         result = []
         for x in response.json():
-            # print(x['id'])
             result.append(x['id'])
         return result
 
@@ -105,17 +101,9 @@ class Kakilaba:
                 combine = x['source']+";"+words[0]+";"+kata[1]+";"+cat+";"+ip
                 result.append(combine)
 
-
-                # print(x['source'])
-                # print(words[0])
-                # print(kata[1])
-                # print(cat)
-                # print(combine)
         return result
 
     def downloadResource(this):
-        # Main Program
-        # search_name = "Badan Informasi Geospasial"
         txt = this.search_name+".csv"
         fileditulis=txt
         file1=open(fileditulis,"a")
@@ -133,11 +121,3 @@ class Kakilaba:
     # print(res)
     # coba = getType(id)
     # print(coba)
-
-
-
-
-# daftar = [ "Pendidikan/Akademik", "Top E commerce"]
-# for x in daftar:
-#     print("Sektor: "+x)
-
